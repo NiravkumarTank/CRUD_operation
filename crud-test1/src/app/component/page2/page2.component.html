@@ -1,0 +1,53 @@
+@if(isEdit){
+  <h3>Edit Employee Details</h3>
+}@else {
+  <h3 >Add Employee</h3>
+}
+
+<div class="container">
+  <form [formGroup]="employeeForm" (ngSubmit)="save()">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      formControlName="name"
+      placeholder="Your name.."
+    />
+
+    <label for="address">Address</label>
+    <textarea
+      id="subject"
+      name="address"
+      placeholder="Write something.."
+      formControlName="address"
+      style="height: 75px"
+    ></textarea>
+
+    <label for="city">City</label>
+    <select id="city" name="city"  formControlName="city" >
+      <option value="ahmedabad">Ahmedabad</option>
+      <option value="delhi">Delhi</option>
+      <option value="mumbai">Mumbai</option>
+      <option value="bangalore">Bangalore</option>
+      <option value="kolkata">Kolkata</option>
+      <option value="chennai">Chennai</option>
+      <option value="hyderabad">Hyderabad</option>
+      <option value="pune">Pune</option>
+      <option value="chandigarh">Chandigarh</option>
+      <option value="jaipur">Jaipur</option>
+      <option value="lucknow">Lucknow</option>
+      <option value="surat">Surat</option>
+      <option value="kanpur">Kanpur</option>
+      <option value="nagpur">Nagpur</option>
+      <option value="indore">Indore</option>
+    </select>
+
+    
+    @if(isEdit){
+      <input type="submit" value="Update" [disabled]="!employeeForm.valid" />
+    }@else {
+      <input type="submit" value="Submit" [disabled]="!employeeForm.valid" />
+    }
+  </form>
+</div>

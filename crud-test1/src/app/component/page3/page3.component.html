@@ -1,0 +1,21 @@
+<table id="customers">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let employee of employeeList">
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.address}}</td>
+    <td>{{employee.city}}</td>
+    <td class="demo">
+      <button class="but_edit" (click)="edit(employee.id)">Edit</button>
+      <button class="but_delete" (click)="delete(employee.id)">Delete</button></td>
+  </tr>
+ 
+</table>
+
+
